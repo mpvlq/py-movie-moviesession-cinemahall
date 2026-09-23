@@ -3,11 +3,11 @@ from django.db.models import QuerySet
 from db.models import Movie, MovieSession, CinemaHall
 
 
-def get_cinema_halls() -> QuerySet[MovieSession]:
+def get_movie_sessions() -> QuerySet[MovieSession]:
     return MovieSession.objects.all()
 
 
-def create_cinema_hall(
+def create_movie_session(
         show_time: str,
         cinema_hall: CinemaHall,
         movie: Movie
