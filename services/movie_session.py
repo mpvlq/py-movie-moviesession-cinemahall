@@ -3,6 +3,10 @@ from django.db.models import QuerySet
 from db.models import Movie, MovieSession, CinemaHall
 
 
+def get_movie_session_by_id(movie_session_id: int) -> MovieSession:
+    return MovieSession.objects.get(pk=movie_session_id)
+
+
 def get_movies_sessions() -> QuerySet[MovieSession]:
     return MovieSession.objects.all()
 
