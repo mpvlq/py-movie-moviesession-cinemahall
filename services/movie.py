@@ -17,9 +17,9 @@ def get_movies(
             actors__id__in=actors_ids
         ).distinct()
     elif genres_ids:
-        return Movie.objects.get(genres__id__in=genres_ids)
+        return Movie.objects.filter(genres__id__in=genres_ids).distinct()
     elif actors_ids:
-        return Movie.objects.get(actors__id__in=actors_ids)
+        return Movie.objects.filter(actors__id__in=actors_ids).distinct()
     else:
         return Movie.objects.all()
 
